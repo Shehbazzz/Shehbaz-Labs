@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHEHBAZ LABS | OFFICIAL ACCESS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Fira+Code:wght@400&display=swap');
+        
+        :root {
+            --neon-blue: #00d2ff;
+            --verified-blue: #1d9bf0;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #010101;
+            color: #fff;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        /* NEW Matrix Loader Background */
+        #loader {
+            position: fixed; inset: 0; background: #000; z-index: 100;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+        }
+        #matrix-bg { position: absolute; inset: 0; opacity: 0.15; }
+
+        .terminal-text {
+            font-family: 'Fira Code', monospace;
+            color: #00ff41;
+            font-size: 14px;
+            margin-top: 20px;
+            text-shadow: 0 0 10px #00ff41;
+            z-index: 101;
+        }
+
+        /* The "Official" Elite Card - SAME AS BEFORE */
+        .official-card {
+            background: rgba(8, 8, 8, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            position: relative;
+            padding: 3px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+        }
+
+        .official-card::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            background: conic-gradient(transparent, transparent, rgba(0, 210, 255, 0.1), var(--neon-blue));
+            animation: rotate 4s linear infinite;
+        }
+
+        @keyframes rotate { 100% { transform: rotate(360deg); } }
+
+        .content-inner {
+            position: relative; z-index: 1;
+            background: #050505; border-radius: 28px; padding: 2.5rem;
+        }
+
+        .icon-box {
+            position: relative;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .icon-box:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .icon-box:hover i { transform: rotateY(360deg); }
+
+        /* Verified Badge Fix */
+        .verified-tick {
+            position: absolute; bottom: -5px; right: -5px;
+            background: var(--verified-blue); color: white;
+            width: 28px; height: 28px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 14px; border: 3px solid #050505;
+            box-shadow: 0 0 15px rgba(29, 155, 240, 0.6);
+            animation: verified-pulse 2s infinite ease-in-out;
+        }
+
+        @keyframes verified-pulse {
+            0%, 100% { transform: scale(1); opacity: 0.9; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+
+        .status-badge {
+            background: rgba(0, 255, 65, 0.1); color: #00ff41;
+            border: 1px solid rgba(0, 255, 65, 0.3);
+            font-family: 'Fira Code', monospace; font-size: 9px;
+            padding: 2px 8px; border-radius: 4px; margin-top: -10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center p-4">
+
+    <div id="loader">
+        <canvas id="matrix-bg"></canvas>
+        <div class="relative z-[101] flex flex-col items-center">
+            <div class="w-20 h-20 border-4 border-blue-500/20 rounded-full"></div>
+            <div class="absolute w-20 h-20 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+            <div class="terminal-text" id="loading-msg">ESTABLISHING CONNECTION...</div>
+        </div>
+    </div>
+
+    <div class="official-card max-w-md w-full">
+        <div class="content-inner">
+            <div class="text-center mb-10">
+                <div class="relative inline-block mb-6">
+                    <img src="https://i.postimg.cc/50ddSjyw/IMG-20260503-WA0021.jpg" 
+                         class="w-28 h-28 rounded-3xl object-cover border border-white/10 shadow-2xl">
+                    <div class="verified-tick">
+                        <i class="fas fa-check"></i>
+                    </div>
+                </div>
+                <div class="status-badge">SYSTEM: ONLINE_SECURE</div>
+                <h1 class="text-3xl font-bold tracking-tighter text-white mt-4 mb-1">SHEHBAZ LABS</h1>
+                <p class="text-gray-600 text-[10px] font-bold tracking-[0.3em] uppercase">Advanced Security Research</p>
+            </div>
+
+            <div class="grid grid-cols-3 gap-6 mb-12">
+                <a href="https://facebook.com/shehbaz.789" target="_blank" class="flex flex-col items-center gap-3"><div class="icon-box w-16 h-16 rounded-2xl flex items-center justify-center text-2xl text-[#1877F2]"><i class="fab fa-facebook-f"></i></div></a>
+                <a href="https://www.tiktok.com/@shehbaz.labs" target="_blank" class="flex flex-col items-center gap-3"><div class="icon-box w-16 h-16 rounded-2xl flex items-center justify-center text-2xl text-[#00f2ea]"><i class="fab fa-tiktok"></i></div></a>
+                <a href="https://discord.com/users/mr.shehbaz" target="_blank" class="flex flex-col items-center gap-3"><div class="icon-box w-16 h-16 rounded-2xl flex items-center justify-center text-2xl text-[#5865F2]"><i class="fab fa-discord"></i></div></a>
+                <a href="https://whatsapp.com/channel/0029VbD4UbdCRs1mNQPRZt2F" target="_blank" class="flex flex-col items-center gap-3"><div class="icon-box w-16 h-16 rounded-2xl flex items-center justify-center text-2xl text-[#25D366]"><i class="fab fa-whatsapp"></i></div></a>
+                <a href="https://youtube.com/@shehbaz.playz7" target="_blank" class="flex flex-col items-center gap-3"><div class="icon-box w-16 h-16 rounded-2xl flex items-center justify-center text-2xl text-[#FF0000]"><i class="fab fa-youtube"></i></div></a>
+                <a href="https://device-bazaar.vercel.app/" target="_blank" class="flex flex-col items-center gap-3"><div class="icon-box w-16 h-16 rounded-2xl flex items-center justify-center text-2xl text-yellow-500 shadow-[0_0_20px_rgba(234,179,8,0.2)]"><i class="fas fa-microchip"></i></div></a>
+            </div>
+
+            <div class="flex justify-between items-center text-[10px] font-mono text-gray-600">
+                <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                    <span id="user-city">FETCHING_LOC...</span>
+                </div>
+                <div id="user-country">STABLE_NODE</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 1. Matrix Effect for Loader
+        const canvas = document.getElementById('matrix-bg');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+        const characters = "1010101010";
+        const fontSize = 14;
+        const columns = canvas.width / fontSize;
+        const drops = Array.from({ length: columns }).fill(1);
+
+        function drawMatrix() {
+            ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "#00ff41";
+            ctx.font = fontSize + "px monospace";
+            drops.forEach((y, i) => {
+                const text = characters.charAt(Math.floor(Math.random() * characters.length));
+                ctx.fillText(text, i * fontSize, y * fontSize);
+                if (y * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+                drops[i]++;
+            });
+        }
+        const matrixInterval = setInterval(drawMatrix, 50);
+
+        // 2. Fetch Live Location
+        fetch('https://ipapi.co/json/')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('user-city').innerText = data.city.toUpperCase() + "_NODE";
+                document.getElementById('user-country').innerText = data.country_code + " | SECURE";
+            })
+            .catch(() => {
+                document.getElementById('user-city').innerText = "LOCAL_NODE";
+                document.getElementById('user-country').innerText = "PK | SECURE";
+            });
+
+        // 3. Loader Messages
+        const msgs = ["TRACING IP...", "BYPASSING FIREWALL...", "ACCESSING NODE...", "ELITE_SYSTEM READY."];
+        let i = 0;
+        const msgElement = document.getElementById('loading-msg');
+        const interval = setInterval(() => {
+            msgElement.innerText = msgs[i];
+            i++;
+            if(i >= msgs.length) {
+                clearInterval(interval);
+                clearInterval(matrixInterval);
+                setTimeout(() => {
+                    document.getElementById('loader').style.opacity = '0';
+                    setTimeout(() => document.getElementById('loader').remove(), 500);
+                }, 800);
+            }
+        }, 700);
+    </script>
+</body>
+</html>
